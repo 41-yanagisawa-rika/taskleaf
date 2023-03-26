@@ -1,0 +1,6 @@
+tap "homebrew/bundle"
+tap "homebrew/core"
+brew "libpq"
+brew "node"
+brew "openssl@3"
+brew "rbenv"
