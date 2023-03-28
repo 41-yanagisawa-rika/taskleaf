@@ -1,5 +1,5 @@
-FactryBot.define do
-    factry :user do
+FactoryBot.define do
+    factory :user do
         name { 'テストユーザー' }
         email { 'text@example.com' }
         password { 'password' }
