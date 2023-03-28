@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_27_122050) do
+ActiveRecord::Schema.define(version: 2023_03_28_015955) do
 
 # Could not dump table "tasks" because of following StandardError
 #   Unknown type 'strings' for column 'name'

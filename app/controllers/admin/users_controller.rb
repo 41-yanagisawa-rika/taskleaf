@@ -28,7 +28,7 @@ class Admin::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    if @user.update(user.params)
+    if @user.update(user_params)
       redirect_to admin_user_url(@user), notice: 'ユーザー「#{@user.name}」を登録しました。'
     else
       reder :new
@@ -38,12 +38,16 @@ class Admin::UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to admin_user_url, notion: 'ユーザー「#{user.name}」を削除しました。'
+    redirect_to admin_users_url, notion: 'ユーザー「#{@user.name}」を削除しました。'
   end
 
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :admin, :password, :passeword_confirmation)
+  end
+
+  def requier_admin
+    redirect_to root_url unless current_user.admin?
   end
 end
